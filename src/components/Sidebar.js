@@ -28,9 +28,9 @@ function Sidebar(props, { defaultActive, }) {
 
   return (
     <>
-    
+
       <SidebarParent className="shadow-lg">
-      
+
         {
           SidebarItems.map((item, index) => {
             return (
@@ -42,10 +42,10 @@ function Sidebar(props, { defaultActive, }) {
             );
           })
         }
-        
+
         <div className="behind-the-scenes" />
       </SidebarParent>
-     
+
     </>
   );
 }

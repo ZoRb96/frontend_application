@@ -60,14 +60,6 @@ function ADDEmployee(props) {
 
   };
 
-  // const { empdetails, onInputChange, handleSubmit } = React.useState({ 
-  //   contactNo: '',
-  //   email: '',
-  //   employeeId: '',
-  //   firstname: '',
-  //   lastname: ''
-  // });
-
   return (
     <div className='addEmployee'>
       <Container>

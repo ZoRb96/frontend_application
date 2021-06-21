@@ -36,20 +36,20 @@ function EDITEmployee(props) {
     if (noErrors) {
       console.log("Authenticated", empdetails);
 
-    const db = await firebase.firestore()
-    db.collection("employeeDetails").doc(id).set({
-      firstname: firstname,
-      lastname: lastname,
-      email: email,
-      employeeId: employeeId,
-      contactNo: contactNo
-    }).then(() => {
-      alert("Employee with EmployeeId: "+employeeId+" is updated");
-      history.push("/viewEmployee");
-    })
-      .catch((error) => {
-        alert(error.message);
-      });
+      const db = await firebase.firestore()
+      db.collection("employeeDetails").doc(id).set({
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        employeeId: employeeId,
+        contactNo: contactNo
+      }).then(() => {
+        alert("Employee with EmployeeId: " + employeeId + " is updated");
+        history.push("/viewEmployee");
+      })
+        .catch((error) => {
+          alert(error.message);
+        });
     } else {
       console.log("errors try again", validationErrors);
     }
@@ -71,11 +71,11 @@ function EDITEmployee(props) {
           <Form className="form" onSubmit={e => onSubmit(e)}>
 
             <Card.Body>
-            <Form.Group as={Row} controlId="formEmployeeId" className="mt-3 p-3">
+              <Form.Group as={Row} controlId="formEmployeeId" className="mt-3 p-3">
                 <Form.Label column md={2}>Employee Id</Form.Label>
                 <Col md={10}>
-                <Row>
-                  <Form.Control type="text" name="employeeId" value={employeeId} onChange={onInputChange} readOnly = {true} />
+                  <Row>
+                    <Form.Control type="text" name="employeeId" value={employeeId} onChange={onInputChange} readOnly={true} />
                   </Row>
                   <Row>
                     {errors.employeeId && <p>Please enter a valid employee id</p>}
@@ -86,8 +86,8 @@ function EDITEmployee(props) {
               <Form.Group as={Row} controlId="formFirstName" className="p-3">
                 <Form.Label column md={2}>First Name</Form.Label>
                 <Col md={10}>
-                <Row>
-                  <Form.Control type="text" placeholder="Enter First Name" name="firstname" value={firstname} onChange={onInputChange}/>
+                  <Row>
+                    <Form.Control type="text" placeholder="Enter First Name" name="firstname" value={firstname} onChange={onInputChange} />
                   </Row>
                   <Row>
                     {errors.firstname && <p>Please enter a valid name</p>}
@@ -99,9 +99,9 @@ function EDITEmployee(props) {
                 <Form.Label column md={2}>Last Name</Form.Label>
                 <Col md={10}>
                   <Row>
-                  <Form.Control type="text" placeholder="Enter Last Name"
-                    name="lastname" value={lastname} onChange={onInputChange}/>
-                    </Row>
+                    <Form.Control type="text" placeholder="Enter Last Name"
+                      name="lastname" value={lastname} onChange={onInputChange} />
+                  </Row>
                   <Row>
                     {errors.lastname && <p>Please enter a valid name</p>}
                   </Row>
@@ -112,9 +112,9 @@ function EDITEmployee(props) {
                 <Form.Label column md={2}>Contact No</Form.Label>
                 <Col md={10}>
                   <Row>
-                  <Form.Control type="tel" placeholder="Enter Contact Number"
-                    name="contactNo" value={contactNo} onChange={onInputChange}/>
-                    </Row>
+                    <Form.Control type="tel" placeholder="Enter Contact Number"
+                      name="contactNo" value={contactNo} onChange={onInputChange} />
+                  </Row>
                   <Row>
                     {errors.contactNo && <p>Please enter a valid contact number</p>}
                   </Row>
@@ -125,9 +125,9 @@ function EDITEmployee(props) {
                 <Form.Label column md={2}>Email address</Form.Label>
                 <Col md={10}>
                   <Row>
-                  <Form.Control type="email" placeholder="Enter email"
-                    name="email" value={email} onChange={onInputChange}/>
-                     </Row>
+                    <Form.Control type="email" placeholder="Enter email"
+                      name="email" value={email} onChange={onInputChange} />
+                  </Row>
                   <Row>
                     {errors.email && <p>Email error</p>}
                   </Row>
